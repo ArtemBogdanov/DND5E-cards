@@ -30,7 +30,7 @@ var Card = React.createClass({
     var source = this.props.data.source ? '- ' + this.props.data.source.split(' ').map(function(w) {return w[0]} ).join('') : '';
     if (this.props.showBack) {
       cardClass += ' back';
-      var lvlNum = this.props.data.level == 'Заговор' ? 0 : this.props.data.level.substr(0,1);
+      var lvlNum = this.props.data.level === 'Заговор' ? 0 : this.props.data.level.substr(0,1);
       return (
         <div className={cardClass}>
           <div className='number'>{lvlNum}</div>
@@ -322,6 +322,6 @@ var Cards = React.createClass({
 
 
 ReactDOM.render(
-  <Cards url="api/cards.json" pollInterval={5000} type="Бард"/>,
+  <Cards url="api/cards.json" pollInterval={5000} type="Волшебник"/>,
   document.getElementById('content')
 );
